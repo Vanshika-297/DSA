@@ -1,25 +1,24 @@
-//when pos== neg
+//when pos==neg
 #include<bits/stdc++.h>
 using namespace std;
 class Solution{
     public:
     vector<int> rearrange(vector<int> &nums)
     {
-        vector<int> pos,neg;
-        int n=nums.size();
-        for (int i=0;i<n;i++)
-        {
-            if (nums[i]>0)
-                pos.push_back(nums[i]);
-            else
-                neg.push_back(nums[i]);
+        vector<int> ans(nums.size());
+        int posIndex=0,negIndex=1;
+        for(int i=0;i<nums.size();i++){
+            if(nums[i]<0){
+                ans[negIndex]=nums[i];
+                negIndex+=2;
+            }
+            else{
+                ans[posIndex]=nums[i];
+                posIndex+=2;
+
+            }
         }
-        for (int i=0;i<n/2;i++)
-        {
-            nums[2*i]=pos[i];
-            nums[2*i+1]=neg[i];
-        }
-        return nums;
+        return ans;
     }
 };
 int main()
