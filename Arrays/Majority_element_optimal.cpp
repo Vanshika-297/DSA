@@ -3,7 +3,7 @@
 using namespace std;
  class Solution{
     public:
-    int majority(vector<int>&arr,int n){
+    int majority(vector<int>&arr,int n){//finding majority element 
         int cnt=0;
         int el;
         for(int i=0;i<n;i++){
@@ -12,7 +12,7 @@ using namespace std;
             else {cnt--;}
         }
         int cnt1=0;
-        for(int i=0;i<n;i++){
+        for(int i=0;i<n;i++){//verifying majority element
             if(el==arr[i]){
                 cnt1++;
             }
